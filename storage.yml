@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+    - name: hello
+      shell: /bin/echo hello
