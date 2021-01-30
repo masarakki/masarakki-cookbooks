@@ -1,0 +1,4 @@
+- name: create users
+  user:
+    name: "{{ item }}"
+  with_items: "{{ commons_user.names }}"
