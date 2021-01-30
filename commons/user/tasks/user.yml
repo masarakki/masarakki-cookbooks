@@ -1,5 +1,19 @@
 - name: create users
+  with_items: "{{ commons_user.names }}"
   user:
     name: "{{ item }}"
     shell: "/usr/bin/zsh"
+- name: create .zshrc
+  become: true
+  become_user: "{{ item }}"
   with_items: "{{ commons_user.names }}"
+  file:
+    name: "/home/{{ item }}/.zshrc"
+    state: touch
+- name: create .zshenv
+  become: true
+  become_user: "{{ item }}"
+  with_items: "{{ commons_user.names }}"
+  file:
+    name: "/home/{{ item }}/.zshenv"
+    state: touch
