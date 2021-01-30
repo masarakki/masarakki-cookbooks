@@ -4,7 +4,18 @@
   roles:
     - commons/system
     - commons/user
+    - storage
   vars:
     commons_user:
       names:
         - masaki
+    storage:
+      devices:
+        - /dev/sdb
+        - /dev/sdc
+        - /dev/sdd
+        - /dev/sde
+        - /dev/sdf
+        - /dev/sdg
+        - /dev/sdh
+        - /dev/sdi
