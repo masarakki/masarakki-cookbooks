@@ -1,5 +1,9 @@
 ---
-- hosts: all
-  tasks:
-    - name: hello
-      shell: /bin/echo hello
+- hosts: storage
+  become: true
+  roles:
+    - commons/user
+  vars:
+    commons_user:
+      names:
+        - masaki
