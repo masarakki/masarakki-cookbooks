@@ -1,0 +1,12 @@
+- name: parted
+  with_items: "{{ storage.devices }}"
+  parted:
+    device: "{{ item }}"
+    label: gpt
+    number: 1
+    state: present
+- name: filesystem
+  with_items: "{{ storage.devices }}"
+  filesystem:
+    dev: "{{ item }}1"
+    fstype: ext4
