@@ -5,8 +5,14 @@
     label: gpt
     number: 1
     state: present
-- name: filesystem
-  with_items: "{{ storage.devices }}"
-  filesystem:
-    dev: "{{ item }}1"
-    fstype: ext4
+- name: raid array
+  include_role:
+    name: ahharu.mdadm
+  vars:
+    mdadm_arrays:
+      - name: md0
+        devices: "{{ storage.devices | map('append', '1') | list }}"
+        filesystem: ext4
+        level: 6
+        state: present
+        mountpoint: /mnt/storage
