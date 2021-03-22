@@ -1,6 +1,11 @@
 - name: install zsh
   apt:
     name: zsh
+- name: install environments
+  apt:
+    name:
+      - language-pack-ja-base
+      - language-pack-ja
 - name: install build-tools
   apt:
     name:
