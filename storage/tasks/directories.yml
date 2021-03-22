@@ -1,0 +1,17 @@
+- name: user directories
+  become: true
+  file:
+    path: "/mnt/storage/{{ item }}"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0700
+  with_items: "{{ commons_user.names }}"
+- name: create link
+  become: true
+  become_user: "{{ item }}"
+  file:
+    src: "/mnt/storage/{{ item }}"
+    dest: "/home/{{ item }}/storage"
+    state: link
+  with_items: "{{ commons_user.names }}"

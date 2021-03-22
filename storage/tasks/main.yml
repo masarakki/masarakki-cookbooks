@@ -1,1 +1,2 @@
 - include: raid.yml
+- include: directories.yml
