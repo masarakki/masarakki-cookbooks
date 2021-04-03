@@ -13,7 +13,7 @@
     samba_server_min_protocol: SMB2
     samba_guest_account: nobody
     samba_shares:
-      - name: MoruCar
+      - name: MolCar
         path: /mnt/storage/share
         comment: Shared Storage
         group: sambashare
