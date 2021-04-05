@@ -22,3 +22,11 @@
         guest_only: true
         writable: true
         public: true
+- name: create link
+  become: true
+  become_user: "{{ item }}"
+  file:
+    src: /mnt/storage/share
+    dest: "/home/{{ item }}/share"
+    state: link
+  with_items: "{{ commons_user.names }}"
