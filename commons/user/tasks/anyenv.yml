@@ -31,5 +31,5 @@
   become_user: "{{ item }}"
   with_items: "{{ commons_user.names }}"
   lineinfile:
-    path: "/home/{{ item }}/.zshrc"
+    path: "/home/{{ item }}/.zlogin"
     line: 'eval "$(anyenv init -)"'
