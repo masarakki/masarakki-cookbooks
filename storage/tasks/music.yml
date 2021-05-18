@@ -1,0 +1,17 @@
+- name: chown music files
+  become: true
+  cron:
+    name: chown music files
+    minute: "0"
+    hour: "9"
+    job: chown -R nobody:sambashare /mnt/storage/share/Music;
+      chmod -R a=rX,ug+w /mnt/storage/share/Music
+
+- name: sync music files
+  become: true
+  cron:
+    user: masaki
+    name: sync music files
+    minute: "30"
+    hour: "9"
+    job: zsh -lc "aws s3 sync /mnt/storage/share/Music s3://masarakki/Music"
