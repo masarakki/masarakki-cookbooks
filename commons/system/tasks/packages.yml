@@ -5,8 +5,6 @@
   apt:
     name:
       - acl
-      - language-pack-ja-base
-      - language-pack-ja
 - name: install build-tools
   apt:
     name:
