@@ -1,0 +1,8 @@
+- hosts: laptop
+  become: true
+  roles:
+    - commons
+  vars:
+    commons:
+      users:
+        - name: masaki
