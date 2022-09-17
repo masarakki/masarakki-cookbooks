@@ -1,35 +1,24 @@
 - name: install anyenv
-  become: true
-  become_user: "{{ item }}"
-  with_items: "{{ commons_user.names }}"
   git:
     repo: https://github.com/anyenv/anyenv
-    dest: "/home/{{ item }}/.anyenv"
+    dest: "$HOME/.anyenv"
 - name: create plugins
-  become: true
-  become_user: "{{ item }}"
-  with_items: "{{ commons_user.names }}"
   file:
-    path: "/home/{{ item }}/.anyenv/plugins"
+    path: "$HOME/.anyenv/plugins"
     state: directory
 - name: install anyenv-update
-  become: true
-  become_user: "{{ item }}"
-  with_items: "{{ commons_user.names }}"
   git:
     repo: https://github.com/znz/anyenv-update
-    dest: "/home/{{ item }}/.anyenv/plugins/anyenv-update"
+    dest: "$HOME/.anyenv/plugins/anyenv-update"
 - name: setup PATH
-  become: true
-  become_user: "{{ item }}"
   lineinfile:
-    path: "/home/{{ item }}/.zshenv"
+    path: "$HOME/.zshenv"
     line: "export PATH=$HOME/.anyenv/bin:$PATH"
-  with_items: "{{ commons_user.names }}"
 - name: anyenv init
-  become: true
-  become_user: "{{ item }}"
-  with_items: "{{ commons_user.names }}"
   lineinfile:
-    path: "/home/{{ item }}/.zshrc"
+    path: "$HOME/.zshrc"
     line: 'eval "$(anyenv init -)"'
+- shell:
+    cmd: yes | anyenv install --init
+    executable: zsh
+    creates: $HOME/.config/anyenv

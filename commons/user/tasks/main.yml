@@ -1,2 +1,5 @@
 - include: user.yml
+- include: rcfiles.yml
+  become_user: "{{ user.name }}"
 - include: anyenv.yml
+  become_user: "{{ user.name }}"
