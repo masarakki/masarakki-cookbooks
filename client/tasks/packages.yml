@@ -10,6 +10,7 @@
       - google-chrome-stable
       - code
       - fcitx5-mozc
+      - dropbox
 - name: install snap packages
   snap:
     name:

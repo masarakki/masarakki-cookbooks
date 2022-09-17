@@ -2,3 +2,5 @@
   include_tasks: repos/google.yml
 - name: setup microsoft repos
   include_tasks: repos/microsoft.yml
+- name: setup dropbox repos
+  include_tasks: repos/dropbox.yml
