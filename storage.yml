@@ -2,13 +2,12 @@
 - hosts: storage
   become: true
   roles:
-    - commons/system
-    - commons/user
+    - commons
     - storage
   vars:
-    commons_user:
-      names:
-        - masaki
+    commons:
+      users:
+        - name: masaki
     storage:
       devices:
         - /dev/sdb

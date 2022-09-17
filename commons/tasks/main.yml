@@ -1,0 +1,7 @@
+- import_role:
+    name: commons/system
+- loop: "{{ commons.users }}"
+  include_role:
+    name: commons/user
+  vars:
+    user: "{{ item }}"

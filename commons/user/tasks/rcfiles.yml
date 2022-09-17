@@ -1,0 +1,8 @@
+- name: create ~/.zshrc
+  file:
+    name: "$HOME/.zshrc"
+    state: touch
+- name: create ~/.zshenv
+  file:
+    name: "$HOME/.zshenv"
+    state: touch
