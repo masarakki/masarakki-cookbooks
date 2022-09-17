@@ -2,15 +2,3 @@
   user:
     name: "{{ user.name }}"
     shell: "/usr/bin/zsh"
-- name: create .zshrc
-  become: true
-  become_user: "{{ user.name }}"
-  file:
-    name: "/home/{{ user.name }}/.zshrc"
-    state: touch
-- name: create .zshenv
-  become: true
-  become_user: "{{ user.name }}"
-  file:
-    name: "/home/{{ user.name }}/.zshenv"
-    state: touch
