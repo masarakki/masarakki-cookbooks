@@ -24,9 +24,7 @@
     creates: $HOME/.config/anyenv
 - name: install env
   loop: "{{ user.anyenvs }}"
-  loop_control:
-    loop_var: env_name
   shell:
-    cmd: "anyenv install {{ env_name }}"
+    cmd: "anyenv install {{ item }}"
     executable: zsh
-    creates: "$HOME/.anyenv/envs/{{ env_name }}"
+    creates: "$HOME/.anyenv/envs/{{ item }}"
