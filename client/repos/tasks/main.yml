@@ -1,1 +1,2 @@
 - include: google-chrome.yml
+- include: docker.yml
