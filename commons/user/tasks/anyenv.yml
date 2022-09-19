@@ -22,3 +22,10 @@
     cmd: yes | anyenv install --init
     executable: zsh
     creates: $HOME/.config/anyenv
+- name: install env
+  loop: "{{ user.anyenvs }}"
+  loop_control:
+    loop_var: anyenv
+  shell:
+    cmd: "anyenv install --skip-existing {{ anyenv }}"
+    executable: zsh

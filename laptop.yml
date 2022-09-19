@@ -7,3 +7,9 @@
     commons:
       users:
         - name: masaki
+          anyenvs:
+            - rbenv
+            - nodenv
+            - tfenv
+            - pyenv
+            - goenv
