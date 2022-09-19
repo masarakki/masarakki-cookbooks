@@ -1,8 +1,17 @@
-- name: create ~/.zshrc
+- loop:
+    - $HOME/.bashrc
+    - $HOME/.bash_logout
+    - $HOME/.profile
+  loop_control:
+    loop_var: target
   file:
-    name: "$HOME/.zshrc"
-    state: touch
-- name: create ~/.zshenv
-  file:
-    name: "$HOME/.zshenv"
-    state: touch
+    path: "{{ target }}"
+    state: absent
+- loop:
+    - $HOME/.zshrc
+    - $HOME/.zshenv
+  loop_control:
+    loop_var: target
+  shell:
+    cmd: "touch {{ target }}"
+    creates: "{{ target }}"
