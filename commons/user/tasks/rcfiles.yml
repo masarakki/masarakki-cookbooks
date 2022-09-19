@@ -5,9 +5,3 @@
   file:
     path: "{{ item }}"
     state: absent
-- loop:
-    - $HOME/.zshrc
-    - $HOME/.zshenv
-  file:
-    path: "{{ item }}"
-    state: touch
