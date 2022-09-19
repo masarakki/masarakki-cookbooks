@@ -2,16 +2,12 @@
     - $HOME/.bashrc
     - $HOME/.bash_logout
     - $HOME/.profile
-  loop_control:
-    loop_var: target
   file:
-    path: "{{ target }}"
+    path: "{{ item }}"
     state: absent
 - loop:
     - $HOME/.zshrc
     - $HOME/.zshenv
-  loop_control:
-    loop_var: target
-  shell:
-    cmd: "touch {{ target }}"
-    creates: "{{ target }}"
+  file:
+    path: "{{ item }}"
+    state: touch
