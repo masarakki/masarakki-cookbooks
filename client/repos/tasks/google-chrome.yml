@@ -1,7 +1,7 @@
 - apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
 - apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    repo: deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
     filename: google-chrome
 - apt:
     name:
