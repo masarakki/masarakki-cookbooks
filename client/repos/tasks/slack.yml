@@ -1,0 +1,7 @@
+- apt_key:
+    url: https://packagecloud.io/slacktechnologies/slack/gpgkey
+- apt_repository:
+    repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+    filename: slack
+- apt:
+    name: slack-desktop

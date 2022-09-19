@@ -2,3 +2,4 @@
 - include: docker.yml
 - include: spotify.yml
 - include: vscode.yml
+- include: slack.yml
