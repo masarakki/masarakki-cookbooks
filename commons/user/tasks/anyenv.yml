@@ -25,7 +25,8 @@
 - name: install env
   loop: "{{ user.anyenvs }}"
   loop_control:
-    loop_var: anyenv
+    loop_var: env_name
   shell:
-    cmd: "anyenv install --skip-existing {{ anyenv }}"
+    cmd: "anyenv install {{ env_name }}"
     executable: zsh
+    creates: "$HOME/.anyenv/envs/{{ env_name }}"
