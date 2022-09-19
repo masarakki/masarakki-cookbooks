@@ -9,3 +9,8 @@
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
+- loop: "{{ commons.users }}"
+  user:
+    name: "{{ item.name }}"
+    groups: docker
+    append: yes
