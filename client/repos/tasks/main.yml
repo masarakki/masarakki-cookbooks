@@ -1,2 +1,3 @@
 - include: google-chrome.yml
 - include: docker.yml
+- include: spotify.yml
