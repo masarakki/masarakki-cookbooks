@@ -1,6 +1,8 @@
-- import_role:
+- name: system settings
+  import_role:
     name: commons/system
-- loop: "{{ commons.users }}"
+- name: user settings
+  loop: "{{ commons.users }}"
   loop_control:
     loop_var: user
   include_role:

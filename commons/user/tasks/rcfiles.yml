@@ -1,4 +1,5 @@
-- loop:
+- name: remove default files
+  loop:
     - $HOME/.bashrc
     - $HOME/.bash_logout
     - $HOME/.profile
