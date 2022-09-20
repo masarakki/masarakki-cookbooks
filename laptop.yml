@@ -2,6 +2,7 @@
   become: true
   roles:
     - commons
+    - developer
     - client
   vars:
     users:

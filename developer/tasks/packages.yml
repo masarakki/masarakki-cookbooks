@@ -1,0 +1,22 @@
+- name: install build-tools
+  apt:
+    name:
+      - build-essential
+      - autoconf
+      - automake
+      - libssl-dev
+      - libbz2-dev
+      - zlib1g-dev
+      - libreadline-dev
+      - uuid-dev
+      - libxml2-dev
+      - libdb-dev
+      - libsqlite3-dev
+      - libmysql++-dev
+      - libpq-dev
+      - libffi-dev
+- name: install tools
+  apt:
+    name:
+      - jq
+      - git
