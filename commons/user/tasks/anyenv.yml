@@ -2,11 +2,11 @@
   git:
     repo: https://github.com/anyenv/anyenv
     dest: "$HOME/.anyenv"
-- name: create plugins
+- name: create plugins directory
   file:
     path: "$HOME/.anyenv/plugins"
     state: directory
-- name: install anyenv-update
+- name: install anyenv-update plugin
   git:
     repo: https://github.com/znz/anyenv-update
     dest: "$HOME/.anyenv/plugins/anyenv-update"
@@ -18,11 +18,12 @@
   lineinfile:
     path: "$HOME/.zshrc"
     line: 'eval "$(anyenv init -)"'
-- shell:
+- name: create $HOME/.config/anyenv directory
+  shell:
     cmd: yes | anyenv install --init
     executable: zsh
     creates: $HOME/.config/anyenv
-- name: install env
+- name: install envs
   loop: "{{ user.anyenvs }}"
   shell:
     cmd: "anyenv install {{ item }}"
