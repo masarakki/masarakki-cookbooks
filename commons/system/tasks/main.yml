@@ -1,2 +1,3 @@
 - include: locale.yml
+- include: repos/main.yml
 - include: packages.yml
