@@ -1,6 +1,3 @@
-- name: install zsh
-  apt:
-    name: zsh
 - name: install environments
   apt:
     name:
@@ -9,11 +6,24 @@
   apt:
     name:
       - build-essential
+      - autoconf
+      - automake
       - libssl-dev
       - libbz2-dev
       - zlib1g-dev
       - libreadline-dev
       - uuid-dev
+      - libxml2-dev
       - libdb-dev
       - libsqlite3-dev
+      - libmysql++-dev
+      - libpq-dev
       - libffi-dev
+- name: install tools
+  apt:
+    name:
+      - zsh
+      - lv
+      - vim
+      - jq
+      - git
