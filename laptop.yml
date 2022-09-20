@@ -4,12 +4,11 @@
     - commons
     - client
   vars:
-    commons:
-      users:
-        - name: masaki
-          anyenvs:
-            - rbenv
-            - nodenv
-            - tfenv
-            - pyenv
-            - goenv
+    users:
+      - name: masaki
+        anyenvs:
+          - rbenv
+          - nodenv
+          - tfenv
+          - pyenv
+          - goenv

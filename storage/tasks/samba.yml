@@ -24,9 +24,9 @@
         public: true
 - name: create link
   become: true
-  become_user: "{{ item }}"
+  become_user: "{{ item.name }}"
   file:
     src: /mnt/storage/share
-    dest: "/home/{{ item }}/share"
+    dest: "/home/{{ item.name }}/share"
     state: link
-  loop: "{{ commons_user.names }}"
+  loop: "{{ uses }}"

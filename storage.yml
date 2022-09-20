@@ -5,9 +5,8 @@
     - commons
     - storage
   vars:
-    commons:
-      users:
-        - name: masaki
+    users:
+      - name: masaki
     storage:
       devices:
         - /dev/sdb

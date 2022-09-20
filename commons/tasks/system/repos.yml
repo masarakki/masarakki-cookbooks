@@ -1,2 +1,2 @@
-- name: docker
+- name: setup docker
   include_tasks: repos/docker.yml
