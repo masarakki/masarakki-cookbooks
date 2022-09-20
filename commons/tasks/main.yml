@@ -1,9 +1,7 @@
 - name: system settings
-  import_role:
-    name: commons/system
+  include_tasks: system.yml
 - name: user settings
   loop: "{{ commons.users }}"
   loop_control:
     loop_var: user
-  include_role:
-    name: commons/user
+  include_tasks: user.yml

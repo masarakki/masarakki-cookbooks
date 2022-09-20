@@ -1,0 +1,8 @@
+- name: setup google-chrome
+  include_tasks: repos/google-chrome.yml
+- name: setup spotify
+  include_tasks: repos/spotify.yml
+- name: setup vscode
+  include_tasks: repos/vscode.yml
+- name: setup slack
+  include_tasks: repos/slack.yml

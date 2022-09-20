@@ -1,3 +1,0 @@
-- include_tasks: locale.yml
-- include_tasks: repos/main.yml
-- include_tasks: packages.yml

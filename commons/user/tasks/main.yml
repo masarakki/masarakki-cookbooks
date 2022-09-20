@@ -1,6 +1,0 @@
-- include_tasks: user.yml
-- block:
-    - include_tasks: rcfiles.yml
-    - include_tasks: prezto.yml
-    - include_tasks: anyenv.yml
-  become_user: "{{ user.name }}"
