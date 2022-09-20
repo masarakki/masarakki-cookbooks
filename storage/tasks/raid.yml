@@ -1,5 +1,5 @@
 - name: parted
-  with_items: "{{ storage.devices }}"
+  loop: "{{ storage.devices }}"
   parted:
     device: "{{ item }}"
     label: gpt

@@ -12,8 +12,8 @@
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
-- name: assign commons.users to docker group
-  loop: "{{ commons.users }}"
+- name: assign users to docker group
+  loop: "{{ users }}"
   user:
     name: "{{ item.name }}"
     groups: docker

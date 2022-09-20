@@ -1,7 +1,7 @@
-- name: system settings
+- name: setup system
   include_tasks: system.yml
-- name: user settings
-  loop: "{{ commons.users }}"
+- name: setup users
+  loop: "{{ users }}"
   loop_control:
     loop_var: user
   include_tasks: user.yml
