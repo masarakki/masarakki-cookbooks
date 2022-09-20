@@ -1,15 +1,19 @@
-- apt_key:
+- name: import docker apt key
+  apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-- apt_repository:
+- name: register docker apt repository
+  apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     filename: docker
-- apt:
+- name: install docker
+  apt:
     name:
       - docker-ce
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
-- loop: "{{ commons.users }}"
+- name: assign commons.users to docker group
+  loop: "{{ commons.users }}"
   user:
     name: "{{ item.name }}"
     groups: docker

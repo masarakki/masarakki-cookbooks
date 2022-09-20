@@ -1,0 +1,6 @@
+- name: setup locale
+  include_tasks: system/locale.yml
+- name: setup repositories
+  include_tasks: system/repos.yml
+- name: install packages
+  include_tasks: system/packages.yml
