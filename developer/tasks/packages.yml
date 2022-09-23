@@ -21,3 +21,4 @@
       - jq
       - git
       - gh
+      - ansible
