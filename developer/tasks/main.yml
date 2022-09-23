@@ -1,3 +1,5 @@
+- name: setup repos
+  include_tasks: repos.yml
 - name: setup packages
   include_tasks: packages.yml
 - name: setup users
