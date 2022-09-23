@@ -3,6 +3,3 @@
 - apt_repository:
     repo: deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
     filename: google-chrome
-- apt:
-    name:
-      - google-chrome-stable
