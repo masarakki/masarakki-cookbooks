@@ -3,5 +3,3 @@
 - apt_repository:
     repo: deb http://repository.spotify.com stable non-free
     filename: spotify
-- apt:
-    name: spotify-client
