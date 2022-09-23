@@ -1,0 +1,5 @@
+- name: destroy capslock
+  lineinfile:
+    path: /etc/default/keyboard
+    regex: "^XKBOPTIONS="
+    line: XKBOPTIONS="ctrl:nocaps"
