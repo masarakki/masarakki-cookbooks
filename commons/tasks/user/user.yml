@@ -1,4 +1,4 @@
 - name: create users
   user:
     name: "{{ user.name }}"
-    shell: "/usr/bin/zsh"
+    shell: /usr/bin/zsh

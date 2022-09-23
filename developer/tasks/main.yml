@@ -1,0 +1,7 @@
+- name: setup packages
+  include_tasks: packages.yml
+- name: setup users
+  loop: "{{ users }}"
+  loop_control:
+    loop_var: user
+  include_tasks: user.yml

@@ -1,0 +1,6 @@
+- block:
+    - name: setup anyenv
+      include_tasks: user/anyenv.yml
+    - name: setup prezto
+      include_tasks: user/prezto.yml
+  become_user: "{{ user.name }}"
