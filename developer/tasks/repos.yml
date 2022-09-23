@@ -1,2 +1,4 @@
 - name: setup github repos
   include_tasks: repos/github.yml
+- name: setup ansible repos
+  include_tasks: repos/ansible.yml
