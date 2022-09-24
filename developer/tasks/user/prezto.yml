@@ -17,3 +17,15 @@
     src: "{{ src }}"
     dest: "{{ dest }}"
     force: no
+- name: enable plugins
+  lineinfile:
+    path: $HOME/.zpreztorc
+    line: "  '{{ item }}' \\"
+    insertbefore: "'prompt'"
+  loop:
+    - command_not_found
+    - git
+    - tmux
+    - ruby
+    - rails
+    - python
