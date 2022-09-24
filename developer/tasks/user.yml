@@ -5,4 +5,4 @@
       include_tasks: user/prezto.yml
   become_user: "{{ user.name }}"
   environment:
-    ZDOTDIR: "{{ lookup('env', 'HOME') }}/.config/zsh"
+    ZDOTDIR: "/home/{{ user.name }}/.config/zsh"
