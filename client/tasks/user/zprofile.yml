@@ -1,0 +1,5 @@
+- name: setup $ZDOTDIR/.zprofile
+  copy:
+    src: zprofile
+    dest: $ZDOTDIR/.zprofile
+    force: no

@@ -1,6 +1,8 @@
 - block:
     - name: setup prezto
       include_tasks: user/prezto.yml
+    - name: setup zprofile
+      include_tasks: user/zprofile.yml
   become_user: "{{ user.name }}"
   environment:
     ZDOTDIR: "/home/{{ user.name }}/.config/zsh"
