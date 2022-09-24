@@ -2,20 +2,17 @@
   git:
     repo: https://github.com/sorin-ionescu/prezto
     dest: $HOME/.zprezto
-- name: find zsh files
-  find:
-    paths: $HOME/.zprezto/runcoms
-    patterns: "z*"
-  register: zsh_files
 - name: copy zsh files
-  loop: "{{ zsh_files.files }}"
-  vars:
-    src: "{{ item.path }}"
-    dest: "$HOME/.{{ item.path.split('/') | last }}"
+  loop:
+    - zpreztorc
+    - zshenv
+    - zshrc
+    - zlogin
+    - zlogout
   copy:
     remote_src: yes
-    src: "{{ src }}"
-    dest: "{{ dest }}"
+    src: "$HOME/.zprezto/runcoms/{{ item }}"
+    dest: "$HOME/.{{ item }}"
     force: no
 - name: enable plugins
   lineinfile:
