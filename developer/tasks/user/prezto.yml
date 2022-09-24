@@ -23,7 +23,7 @@
     line: "  '{{ item }}' \\"
     insertbefore: "'prompt'"
   loop:
-    - command_not_found
+    - command-not-found
     - git
     - tmux
     - ruby
