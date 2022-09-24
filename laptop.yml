@@ -3,8 +3,8 @@
   roles:
     - commons
     - laptop
-    - developer
     - client
+    - developer
   vars:
     users:
       - name: masaki
@@ -14,3 +14,7 @@
           - tfenv
           - pyenv
           - goenv
+        prezto_plugins:
+          - ruby
+          - rails
+          - python
