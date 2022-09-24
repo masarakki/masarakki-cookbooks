@@ -4,3 +4,5 @@
   include_tasks: system/repos.yml
 - name: install packages
   include_tasks: system/packages.yml
+- name: setup zsh
+  include_tasks: system/zsh.yml

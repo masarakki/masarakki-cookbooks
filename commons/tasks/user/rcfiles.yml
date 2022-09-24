@@ -6,3 +6,7 @@
   file:
     path: "{{ item }}"
     state: absent
+- name: $ZDOTDIR
+  file:
+    path: $HOME/.config/zsh
+    state: directory

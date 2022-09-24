@@ -1,7 +1,7 @@
 - name: install prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto
-    dest: $HOME/.zprezto
+    dest: $ZDOTDIR/.zprezto
 - name: copy zsh files
   loop:
     - zpreztorc
@@ -11,12 +11,12 @@
     - zlogout
   copy:
     remote_src: yes
-    src: "$HOME/.zprezto/runcoms/{{ item }}"
-    dest: "$HOME/.{{ item }}"
+    src: "$ZDOTDIR/.zprezto/runcoms/{{ item }}"
+    dest: "$ZDOTDIR/.{{ item }}"
     force: no
 - name: enable plugins
   lineinfile:
-    path: $HOME/.zpreztorc
+    path: $ZDOTDIR/.zpreztorc
     line: "  '{{ item }}' \\"
     insertbefore: "'prompt'"
   loop:
