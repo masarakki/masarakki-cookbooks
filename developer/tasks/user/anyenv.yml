@@ -12,11 +12,11 @@
     dest: "$HOME/.anyenv/plugins/anyenv-update"
 - name: setup PATH
   lineinfile:
-    path: "$HOME/.zshenv"
+    path: "$ZDOTDIR/.zshenv"
     line: "export PATH=$HOME/.anyenv/bin:$PATH"
 - name: anyenv init
   lineinfile:
-    path: "$HOME/.zshrc"
+    path: "$ZDOTDIR/.zshrc"
     line: 'eval "$(anyenv init -)"'
 - name: create $HOME/.config/anyenv directory
   shell:
