@@ -23,3 +23,11 @@
     - command-not-found
     - git
     - tmux
+- name: copy .zprompt
+  copy:
+    src: zprompt.zsh
+    dest: $ZDOTDIR/.zprompt
+- name: load .zprompt
+  lineinfile:
+    path: $ZDOTDIR/.zshrc
+    line: source "${ZDOTDIR:-$HOME}/.zprompt"
