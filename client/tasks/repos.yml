@@ -6,3 +6,5 @@
   include_tasks: repos/microsoft.yml
 - name: setup slack repos
   include_tasks: repos/slack.yml
+- name: install discord
+  include_tasks: repos/discord.yml
