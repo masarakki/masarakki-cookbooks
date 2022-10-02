@@ -1,5 +1,6 @@
-- apt_key:
+- get_url:
     url: https://packagecloud.io/slacktechnologies/slack/gpgkey
+    dest: /etc/apt/keyrings/slack.asc
 - apt_repository:
-    repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+    repo: deb [arch=amd64, signed-by=/etc/apt/keyrings/slack.asc] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
     filename: slack
