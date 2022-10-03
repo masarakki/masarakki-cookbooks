@@ -1,2 +1,6 @@
+- name: /etc/apt/keyrings
+  file:
+    path: /etc/apt/keyrings
+    state: directory
 - name: setup docker
   include_tasks: repos/docker.yml
