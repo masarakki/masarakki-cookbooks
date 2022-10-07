@@ -8,3 +8,7 @@
       - slack-desktop
       - spotify-client
       - code
+- name: set system $PAGER
+  lineinfile:
+    line: export PAGER='lv -c'
+    path: /etc/environment
