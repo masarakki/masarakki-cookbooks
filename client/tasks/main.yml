@@ -1,5 +1,6 @@
 - import_tasks: repos.yml
 - import_tasks: packages.yml
+- import_tasks: envs.yml
 - loop: "{{ users }}"
   loop_control:
     loop_var: user
