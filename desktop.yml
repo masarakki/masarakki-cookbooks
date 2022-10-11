@@ -1,0 +1,19 @@
+- hosts: desktop
+  become: true
+  roles:
+    - commons
+    - client
+    - developer
+  vars:
+    users:
+      - name: masaki
+        anyenvs:
+          - rbenv
+          - nodenv
+          - tfenv
+          - pyenv
+          - goenv
+        prezto_plugins:
+          - ruby
+          - rails
+          - python
