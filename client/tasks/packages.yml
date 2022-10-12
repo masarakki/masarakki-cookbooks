@@ -3,6 +3,7 @@
     name:
       - xclip
       - lv
+      - bat
       - vim
       - tmux
       - google-chrome-stable
