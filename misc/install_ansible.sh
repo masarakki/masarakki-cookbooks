@@ -1,4 +1,4 @@
 #!/bin/sh
 
-apt update
+apt-add-repository -y --update ppa:ansible/ansible
 apt install ansible -y
