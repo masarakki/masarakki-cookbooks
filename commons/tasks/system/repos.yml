@@ -2,5 +2,9 @@
   file:
     path: /etc/apt/keyrings
     state: directory
+- name: setup arch
+  copy:
+    src: dpkg_arch
+    dest: /var/lib/dpkg/arch
 - name: setup docker
   include_tasks: repos/docker.yml
