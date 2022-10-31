@@ -1,0 +1,6 @@
+- apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+- apt_repository:
+    repo: "deb [arch=amd64] http://linux.dropbox.com/ubuntu disco main"
+    filename: dropbox

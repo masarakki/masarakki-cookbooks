@@ -1,5 +1,7 @@
 - name: setup google repos
   include_tasks: repos/google.yml
+- name: setup dropbox
+  include_tasks: repos/dropbox.yml
 - name: setup spotify repos
   include_tasks: repos/spotify.yml
 - name: setup microsoft repos
