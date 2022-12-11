@@ -1,4 +1,5 @@
-- hosts: laptop
+- hosts: localhost
+  connection: local
   become: true
   roles:
     - commons
