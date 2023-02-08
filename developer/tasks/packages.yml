@@ -2,6 +2,7 @@
   apt:
     name:
       - build-essential
+      - rust-all
       - autoconf
       - automake
       - libssl-dev
