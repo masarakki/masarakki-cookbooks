@@ -19,9 +19,10 @@ Vagrant.configure('2') do |config|
 
   config.vm.define 'desktop' do |config|
     config.vm.box = 'ubuntu/jammy64'
-    config.vm.provision :shell, path: 'misc/install_ansible.sh'
-    config.vm.provision :ansible do |ansible|
+    config.vm.provision :ansible_local do |ansible|
+      ansible.install = true
       ansible.playbook = 'desktop.yml'
+      ansible.limit = 'all,localhost'
     end
   end
 end
