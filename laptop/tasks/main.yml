@@ -1,1 +1,1 @@
-- include: keyboard.yml
+- include_tasks: keyboard.yml
