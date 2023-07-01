@@ -1,4 +1,4 @@
 - name: set system $PAGER
   lineinfile:
-    line: export PAGER='lv -c'
+    line: PAGER='lv -c'
     path: /etc/environment
