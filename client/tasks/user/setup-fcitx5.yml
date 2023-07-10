@@ -1,0 +1,4 @@
+- name: copy autostart
+  copy:
+    src: /usr/share/applications/org.fcitx.Fcitx5.desktop
+    dest: $HOME/.config/autostart/
