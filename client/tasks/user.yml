@@ -3,6 +3,8 @@
       include_tasks: user/prezto.yml
     - name: setup zprofile
       include_tasks: user/zprofile.yml
+    - name: setup fcitx5
+      include_tasks: user/setup-fcitx5.yml
   become_user: "{{ user.name }}"
   environment:
     ZDOTDIR: "/home/{{ user.name }}/.config/zsh"
