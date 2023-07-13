@@ -1,4 +1,4 @@
-- name: install packages
+- name: install apt packages
   apt:
     name:
       - curl
@@ -9,6 +9,10 @@
       - tmux
       - google-chrome-stable
       - slack-desktop
-      - spotify-client
       - code
       - fcitx5-mozc
+- name: install snap packages
+  snap:
+    name:
+      - discord
+      - spotify
