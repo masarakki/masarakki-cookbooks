@@ -1,5 +1,0 @@
-- apt_key:
-    url: https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
-- apt_repository:
-    repo: deb http://repository.spotify.com stable non-free
-    filename: spotify

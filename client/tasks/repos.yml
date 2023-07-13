@@ -1,10 +1,6 @@
 - name: setup google repos
   include_tasks: repos/google.yml
-- name: setup spotify repos
-  include_tasks: repos/spotify.yml
 - name: setup microsoft repos
   include_tasks: repos/microsoft.yml
 - name: setup slack repos
   include_tasks: repos/slack.yml
-- name: install discord
-  include_tasks: repos/discord.yml
