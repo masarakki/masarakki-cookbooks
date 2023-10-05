@@ -2,5 +2,3 @@
   include_tasks: repos/google.yml
 - name: setup microsoft repos
   include_tasks: repos/microsoft.yml
-- name: setup slack repos
-  include_tasks: repos/slack.yml
