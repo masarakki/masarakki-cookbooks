@@ -8,7 +8,6 @@
       - vim
       - tmux
       - google-chrome-stable
-      - slack-desktop
       - code
       - fcitx5-mozc
 - name: install snap packages
@@ -17,3 +16,4 @@
       - discord
       - spotify
       - authy
+      - slack
