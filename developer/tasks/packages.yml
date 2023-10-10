@@ -16,11 +16,19 @@
       - libmysql++-dev
       - libpq-dev
       - libffi-dev
-- name: install tools
+- name: install apt packages
   apt:
     name:
       - jq
       - git
-      - gh
       - ansible
+- name: install snap packages
+  community.general.snap:
+    name:
+      - gh
       - peco
+      - git-delta-snap
+- name: alias snap
+  community.general.snap_alias:
+    name: git-delta-snap
+    alias: delta
