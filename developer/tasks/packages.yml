@@ -28,6 +28,12 @@
     name:
       - peco
       - git-delta-snap
+- name: install snap packages (--classic)
+  community.general.snap:
+    name: "{{ item }}"
+    classic: true
+  loop:
+    - aws-cli
 - name: alias snap
   community.general.snap_alias:
     name: git-delta-snap.delta
