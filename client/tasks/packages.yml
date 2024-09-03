@@ -8,6 +8,7 @@
       - vim
       - tmux
       - google-chrome-stable
+      - code
       - fcitx5-mozc
 - name: install snap packages
   snap:
@@ -15,9 +16,3 @@
       - discord
       - spotify
       - slack
-- name: install snap packages (--classic)
-  snap:
-    name: "{{ item }}"
-    classic: true
-  loop:
-    - code

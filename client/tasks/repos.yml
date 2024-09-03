@@ -1,2 +1,4 @@
 - name: setup google repos
   include_tasks: repos/google.yml
+- name: setup microsoft repos
+  include_tasks: repos/microsoft.yml
