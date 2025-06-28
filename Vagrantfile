@@ -21,18 +21,14 @@ Vagrant.configure('2') do |config|
 
   config.vm.define 'laptop' do |config|
     config.vm.hostname = 'laptop'
-    config.vm.provision :ansible_local do |ansible|
-      ansible.install = true
-      ansible.limit = 'all,localhost'
+    config.vm.provision :ansible do |ansible|
       ansible.playbook = 'laptop.yml'
     end
   end
 
   config.vm.define 'desktop' do |config|
     config.vm.hostname = 'desktop'
-    config.vm.provision :ansible_local do |ansible|
-      ansible.install = true
-      ansible.limit = 'all,localhost'
+    config.vm.provision :ansible do |ansible|
       ansible.playbook = 'desktop.yml'
     end
   end
