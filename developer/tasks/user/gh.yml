@@ -1,4 +1,4 @@
 - name: install gh-act
   shell:
-    cmd: gh extension install https://github.com/nektos/gh-act --force
+    cmd: gh extension install nektos/gh-act --force
     executable: zsh
