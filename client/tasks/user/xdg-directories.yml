@@ -1,0 +1,16 @@
+- name: create XDG directories
+  file:
+    path: "$HOME/{{ item.name }}"
+    state: directory
+    mode: "{{ item.mode }}"
+  with_items:
+    - name: .config
+      mode: "0700"
+    - name: .cache
+      mode: "0700"
+    - name: .local
+      mode: "0700"
+    - name: .local/share
+      mode: "0700"
+    - name: .local/state
+      mode: "0755"
