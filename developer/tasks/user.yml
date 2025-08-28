@@ -3,8 +3,8 @@
       include_tasks: user/anyenv.yml
     - name: setup prezto
       include_tasks: user/prezto.yml
-    - name: setup gh
-      include_tasks: user/gh.yml
+    #- name: setup gh
+    #  include_tasks: user/gh.yml
   become_user: "{{ user.name }}"
   environment:
     ZDOTDIR: "/home/{{ user.name }}/.config/zsh"
