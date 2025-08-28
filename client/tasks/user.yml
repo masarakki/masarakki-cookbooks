@@ -1,4 +1,6 @@
 - block:
+    - name: setup xdg-directories
+      include_tasks: user/xdg-directories.yml
     - name: setup prezto
       include_tasks: user/prezto.yml
     - name: setup zprofile
