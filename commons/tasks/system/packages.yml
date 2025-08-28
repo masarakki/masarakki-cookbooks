@@ -1,4 +1,3 @@
 - apt:
     name:
       - acl
-      - zsh

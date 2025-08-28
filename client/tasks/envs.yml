@@ -2,3 +2,7 @@
   lineinfile:
     line: PAGER='lv -c'
     path: /etc/environment
+- name: set $ZDOTDIR
+  lineinfile:
+    path: /etc/zsh/zshenv
+    line: export ZDOTDIR=$HOME/.config/zsh
