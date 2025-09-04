@@ -1,31 +1,41 @@
-- name: install anyenv
-  git:
-    repo: https://github.com/anyenv/anyenv
-    dest: "$HOME/.anyenv"
-- name: create plugins directory
-  file:
-    path: "$HOME/.anyenv/plugins"
-    state: directory
-- name: install anyenv-update plugin
-  git:
-    repo: https://github.com/znz/anyenv-update
-    dest: "$HOME/.anyenv/plugins/anyenv-update"
-- name: setup PATH
-  lineinfile:
-    path: "$ZDOTDIR/.zshenv"
-    line: "export PATH=$HOME/.anyenv/bin:$PATH"
-- name: anyenv init
-  lineinfile:
-    path: "$ZDOTDIR/.zshrc"
-    line: 'eval "$(anyenv init -)"'
-- name: create $HOME/.config/anyenv directory
-  shell:
-    cmd: yes | anyenv install --init
-    executable: zsh
-    creates: $HOME/.config/anyenv
-- name: install envs
-  loop: "{{ user.anyenvs }}"
-  shell:
-    cmd: "anyenv install {{ item }}"
-    executable: zsh
-    creates: "$HOME/.anyenv/envs/{{ item }}"
+- name: setup anyenv
+  block:
+    - name: set ANYENV_ROOT
+      lineinfile:
+        path: "$ZDOTDIR/.zshenv"
+        line: "export ANYENV_ROOT={{ anyenv_root }}"
+    - name: install anyenv
+      git:
+        repo: https://github.com/anyenv/anyenv
+        dest: "{{ anyenv_root }}"
+    - name: create plugins directory
+      file:
+        path: "{{ anyenv_root }}/plugins"
+        state: directory
+    - name: install anyenv-update plugin
+      git:
+        repo: https://github.com/znz/anyenv-update
+        dest: "{{ anyenv_root }}/plugins/anyenv-update"
+    - name: setup PATH
+      lineinfile:
+        path: "$ZDOTDIR/.zshenv"
+        line: "export PATH=$ANYENV_ROOT/bin:$PATH"
+    - name: anyenv init
+      lineinfile:
+        path: "$ZDOTDIR/.zshrc"
+        line: 'eval "$(anyenv init -)"'
+    - name: anyenv install --init
+      shell:
+        cmd: yes | {{ anyenv_root }}/bin/anyenv install --init
+        executable: zsh
+        creates: "$XDG_CONFIG_HOME/anyenv/anyenv-install"
+    - name: install envs
+      loop: "{{ user.anyenvs }}"
+      shell:
+        cmd: "anyenv install {{ item }}"
+        executable: zsh
+        creates: "{{ anyenv_root }}/envs/{{ item }}"
+  vars:
+    anyenv_root: "$HOME/.local/share/anyenv"
+  environment:
+    ANYENV_ROOT: "{{ anyenv_root }}"
