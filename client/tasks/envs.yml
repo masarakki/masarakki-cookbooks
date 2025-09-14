@@ -2,8 +2,15 @@
   lineinfile:
     line: PAGER='lv -c'
     path: /etc/environment
+- name: set XDG environment
+  blockinfile:
+    path: /etc/zsh/zshenv
+    block: |
+      export XDG_CONFIG_HOME=$HOME/.config
+      export XDG_DATA_HOME=$HOME/.local/share
+      export XDG_CACHE_HOME=$HOME/.cache
+      export XDG_STATE_HOME=$HOME/.local/state
 - name: set $ZDOTDIR
   lineinfile:
     path: /etc/zsh/zshenv
-    line: export ZDOTDIR=$HOME/.config/zsh
-#- name: set XDG environment
+    line: export ZDOTDIR=$XDG_CONFIG_HOME/zsh
