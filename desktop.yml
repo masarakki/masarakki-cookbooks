@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: desktop
   become: true
   roles:
     - commons
