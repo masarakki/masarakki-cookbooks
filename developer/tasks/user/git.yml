@@ -1,0 +1,12 @@
+- name: create $XDG_CONFIG_HOME/git
+  file:
+    path: "$XDG_CONFIG_HOME/git"
+    state: directory
+- name: create $XDG_CONFIG_HOME/git/config
+  file:
+    path: "$XDG_CONFIG_HOME/git/config"
+    state: touch
+- name: create $XDG_CONFIG_HOME/git/ignore
+  file:
+    path: "$XDG_CONFIG_HOME/git/ignore"
+    state: touch
