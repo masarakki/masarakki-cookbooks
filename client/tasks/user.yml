@@ -11,3 +11,7 @@
   become_user: "{{ user.name }}"
   environment:
     ZDOTDIR: "/home/{{ user.name }}/.config/zsh"
+    XDG_CONFIG_HOME: "/home/{{ user.name }}/.config"
+    XDG_DATA_HOME: "/home/{{ user.name }}/.local/share"
+    XDG_STATE_HOME: "/home/{{ user.name }}/.local/state"
+    XDG_CACHE_HOME: "/home/{{ user.name }}/.cache"
