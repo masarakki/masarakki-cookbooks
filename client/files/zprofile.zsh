@@ -5,6 +5,7 @@ fi
 
 export EDITOR='/usr/bin/vim'
 export PAGER='/usr/bin/lv -c'
+export BAT_PAGER='less'
 
 alias ls='ls -aF --color=always'
 alias rm='rm -f'
